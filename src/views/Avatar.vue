@@ -35,7 +35,7 @@
         </li>
       </ul>
       <div class="input-box">
-        <input v-if="curSubFontType === 'sub' || curSubFontType === 'circle'" v-model="inputs.single" class="input-cnt" placeholder="Style" maxlength="1" @blur="inputBlur"/>
+        <input v-if="curSubFontType === 'sub' || curSubFontType === 'circle'" v-model="inputs.single" class="input-cnt" placeholder="Style" :maxlength="1" @blur="inputBlur"/>
         <label v-else>
           <input v-model="inputs.left" class="input-cnt" placeholder="Style" @blur="inputBlur"/>
           <label v-show="curSubFontType === 'multiple'">
@@ -458,8 +458,8 @@ export default defineComponent({
       generateSubMain()
     }
 
-    const chooseSubFontType = (type: 'multiple' | 'hole' | 'sub') => {
-      curSubFontType.value = type
+    const chooseSubFontType = (type: string) => {
+      curSubFontType.value = <'multiple' | 'hole' | 'sub' | 'circle'> type
       // generateSubFont(type)
       generateSubMain()
     }

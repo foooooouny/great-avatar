@@ -4,7 +4,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vuedx-typecheck . && vite build",
-    "clearbuild": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
